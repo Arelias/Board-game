@@ -15,9 +15,6 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-import java.util.Optional;
-import java.util.OptionalDouble;
-
 
 public class boardGameMain extends Application {
 
@@ -57,8 +54,16 @@ public class boardGameMain extends Application {
         //splitPane.setStyle("-fx-width:800px");
         splitPane.isResizable();
 
-        GridPane gridPane = new GridPane();
-        setupGrid(pawnArray, background, gridPane);
+        GridPane checkersBoard = new GridPane();
+        checkersBoard.setAlignment(Pos.CENTER);
+        ColumnConstraints column = new ColumnConstraints(blackPawn.getWidth());
+        RowConstraints row = new RowConstraints(blackPawn.getHeight());
+        checkersBoard.setGridLinesVisible(true);
+        checkersBoard.setBackground(background);
+        checkersBoard.getColumnConstraints().add(column);
+        checkersBoard.getRowConstraints().add(row);
+        checkersBoard.setPadding(new Insets(80, 80, 80, 80));
+        drawGrid(pawnArray, checkersBoard);
 
 
         Button buttonStart = new Button("Start");
@@ -74,10 +79,10 @@ public class boardGameMain extends Application {
 
 
         splitPane.getItems().add(menuGrid);
-        splitPane.getItems().add(gridPane);
+        splitPane.getItems().add(checkersBoard);
 
 
-        gridPane.addEventHandler(MouseEvent.MOUSE_CLICKED, e -> {
+        checkersBoard.addEventHandler(MouseEvent.MOUSE_CLICKED, e -> {
 
 
             //get cursor x and y
@@ -92,27 +97,20 @@ public class boardGameMain extends Application {
 
                 //If player clicks on his own pawn he can only select it
                 //Otherwise he has to move to an empty cell
-                if (pawnArray[y][x].isType() == player) {
-                    selectionLogic(x, y, gridPane);
-                } else {
-                    moveLogic(pawnArray,x, y, gridPane);
-                }
+
             }
         });
 
         buttonStart.setOnAction((e) -> {
             System.out.println("Im pressed");
-            pawnArray = setupArray();
-            setupGrid(pawnArray, background, gridPane);
+            //pawnArray = setupArray();
+            drawGrid(pawnArray, checkersBoard);
 
             selectedPawn = null;
         });
         buttonTeam.setOnAction((e) -> {
             if (selectedPawn == null) {
-                if (player == 0)
-                    player = 1;
-                else
-                    player = 0;
+                player = (player + 1)%2;
             }
         });
 
@@ -141,46 +139,43 @@ public class boardGameMain extends Application {
         return output;
     }
 
-    public void setupGrid(Pawn[][] array, Background background, GridPane output) {
+    public void drawGrid(Pawn[][] array, GridPane output) {
 
         output.getChildren().clear();
-        output.setAlignment(Pos.CENTER);
-        ColumnConstraints column = new ColumnConstraints(blackPawn.getWidth());
-        RowConstraints row = new RowConstraints(blackPawn.getHeight());
-        output.setGridLinesVisible(true);
-        output.setBackground(background);
-        output.getColumnConstraints().add(column);
-        output.getRowConstraints().add(row);
-        output.addRow(4);
-        output.setPadding(new Insets(80, 80, 80, 80));
+
 
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
                 if (array[i][j] != null) {
                     ImageView temp = array[i][j].getImageView();
+
+
                     temp.setOnMouseClicked(e -> {
+
                         System.out.println("Clicked!" + e);
-                        GridPane.getColumnIndex((Node)e.getSource());
-                        GridPane.getRowIndex((Node)e.getSource());
+                        int x = GridPane.getColumnIndex((Node)e.getSource());
+                        int y = GridPane.getRowIndex((Node)e.getSource());
+                        System.out.println("Event Col: " + x + " Row: " + y);
                         //i can use methods here
                         //modify only with methods
 
+                        if (pawnArray[y][x].isType() == player) {
+                            selectionLogic(x, y, output);
+                        } else {
+                            moveLogic(pawnArray,x, y, output);
+                        }
+                        if (pawnArray[y][x].isType() == player){
+                            System.out.println("Your team");
+                        } else {
+                            System.out.println("Wrong team");
+                        }
+
                     });
-                    output.add(array[i][j].getImageView(), j, i);
+                    output.add(temp, j, i);
                 }
             }
         }
 
-    }
-    public void rewriteGrid(GridPane gridPane){
-
-        for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 8; j++) {
-                if (pawnArray[i][j] != null) {
-                    gridPane.add(pawnArray[i][j].getImageView(), j, i);
-                }
-            }
-        }
     }
 
     boolean isCursorInBounds(int x, int y) {

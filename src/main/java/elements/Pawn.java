@@ -24,9 +24,8 @@ public class Pawn {
             this.image = new ImageView(new Image("blackPawn.png"));
         }
         if (this.type == 2){
-            //this.image = new ImageView(new Image("emptyPawn.png"));
-            this.image = new ImageView(new Image("whitePawn.png"));
-            this.image.setOpacity(0.01);
+            this.image = new ImageView(new Image("emptyPawn.png"));
+            this.image.setOpacity(0);
         }
     }
 
@@ -44,10 +43,6 @@ public class Pawn {
 
     public int getY() {
         return y;
-    }
-
-    public void setOpacity(double amount){
-        this.image.setOpacity(amount);
     }
 
     public void setType(int type) {

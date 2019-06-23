@@ -46,13 +46,11 @@ public class boardGameMain extends Application {
         Background background = new Background(backgroundImage);
 
 
-        GridPane menuGrid = new GridPane();
 
 
+        //splitPane.setStyle("-fx-width:800px");
         SplitPane splitPane = new SplitPane();
         splitPane.setOrientation(Orientation.VERTICAL);
-        //splitPane.setStyle("-fx-width:800px");
-        splitPane.isResizable();
 
         GridPane checkersBoard = new GridPane();
         checkersBoard.setAlignment(Pos.CENTER);
@@ -71,6 +69,8 @@ public class boardGameMain extends Application {
         Button buttonTeam = new Button("Change Team");
         buttonTeam.setMinSize(100, 100);
 
+
+        GridPane menuGrid = new GridPane();
         menuGrid.add(buttonStart, 0, 0);
         menuGrid.add(buttonTeam, 1, 0);
         menuGrid.setHgap(20);
@@ -82,24 +82,7 @@ public class boardGameMain extends Application {
         splitPane.getItems().add(checkersBoard);
 
 
-        checkersBoard.addEventHandler(MouseEvent.MOUSE_CLICKED, e -> {
 
-
-            //get cursor x and y
-            //i use pawn pixel size since one pawn is one field
-            //this makes getting coordinates easier
-            int x = (int) ((e.getX()) / blackPawn.getHeight()) - 1;
-            int y = (int) ((e.getY()) / blackPawn.getHeight()) - 1;
-            //I check if player didnt click out of bounds
-            if (isCursorInBounds(x, y)) {
-                System.out.println("Col: " + x + " Row: " + y);
-
-
-                //If player clicks on his own pawn he can only select it
-                //Otherwise he has to move to an empty cell
-
-            }
-        });
 
         buttonStart.setOnAction((e) -> {
             System.out.println("Im pressed");
@@ -139,61 +122,42 @@ public class boardGameMain extends Application {
         return output;
     }
 
-    public void drawGrid(Pawn[][] array, GridPane output) {
+    public void drawGrid(Pawn[][] array, GridPane gridPane) {
 
-        output.getChildren().clear();
+        System.out.println("Grid drawing");
+        gridPane.getChildren().clear();
 
 
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
                 if (array[i][j] != null) {
-                    ImageView temp = array[i][j].getImageView();
-
-
-                    temp.setOnMouseClicked(e -> {
-
-                        System.out.println("Clicked!" + e);
-                        int x = GridPane.getColumnIndex((Node)e.getSource());
-                        int y = GridPane.getRowIndex((Node)e.getSource());
-                        System.out.println("Event Col: " + x + " Row: " + y);
-                        //i can use methods here
-                        //modify only with methods
-
-                        if (pawnArray[y][x].isType() == player) {
-                            selectionLogic(x, y, output);
-                        } else {
-                            moveLogic(pawnArray,x, y, output);
-                        }
-                        if (pawnArray[y][x].isType() == player){
-                            System.out.println("Your team");
-                        } else {
-                            System.out.println("Wrong team");
-                        }
-
-                    });
-                    output.add(temp, j, i);
+                    ImageView temp = createPawn(pawnArray, j, i, gridPane, false);
+                    gridPane.add(temp, j, i);
                 }
             }
         }
 
     }
 
-    boolean isCursorInBounds(int x, int y) {
-        return (x >= 0 && x < pawnArray.length && y >= 0 && y < pawnArray.length);
-    }
-
     public Pawn selectPawn(int x, int y, GridPane gridPane) {
 
         Pawn output = pawnArray[y][x];
+
+        //I lose event listener when creating selected pawn, i need to fix it
+        //fixed
+        ImageView temp = createPawn(pawnArray,x,y,gridPane,true);
+
         gridPane.getChildren().removeAll(output.getImageView());
-        gridPane.add(selection, x, y);
+        gridPane.add(temp, x, y);
+        output.setImage(temp);
+
         return output;
     }
 
     public void selectionLogic(int x, int y, GridPane gridPane) {
 
         //if (!selectedPawn.isPresent()) {
-        if(selectedPawn == null){
+        if(selectedPawn == null && selectPawn(x, y, gridPane).isType() != 2){
             System.out.println("Selecting Pawn!");
             selectedPawn = selectPawn(x, y, gridPane);
 
@@ -203,53 +167,90 @@ public class boardGameMain extends Application {
                 System.out.println("You already selected this Pawn! Deselecting");
 
 
-                gridPane.getChildren().removeAll(selection);
-                gridPane.add(selectedPawn.getImageView(), x, y);
-                selectedPawn = null;
+                //deselect pawn
+                deselectPawn(x, y, gridPane);
+
+                drawGrid(pawnArray,gridPane);
             } else {
                 System.out.println("You already chose a different Pawn!");
             }
         }
     }
 
-    public void moveLogic(Pawn[][] pawnArray, int cursor_x, int cursor_y, GridPane gridPane) {
+    public void moveLogic(Pawn[][] pawnArray, int pawn_x, int pawn_y, GridPane gridPane) {
 
         if (selectedPawn != null) {
 
             int origin_x = selectedPawn.getX();
             int origin_y = selectedPawn.getY();
 
-            if (pawnArray[cursor_y][cursor_x].isType() != 2) {
+            if (pawnArray[pawn_y][pawn_x].isType() != 2) {
                 System.out.println("This spot is already occupied!");
-            } else if (pawnArray[cursor_y][cursor_x].isType() == 2) {
-                System.out.println("You want to move here?");
-
-                if ((cursor_y + cursor_x) % 2 == 1 && pawnArray[cursor_y][cursor_x].isType() == 2) {
+            } else if (pawnArray[pawn_y][pawn_x].isType() == 2) {
+                if ((pawn_y + pawn_x) % 2 == 1 && pawnArray[pawn_y][pawn_x].isType() == 2) {
 
                     //I replace origin field with new empty pawn
                     //Then i create new Pawn of the type i moved
                     pawnArray[origin_y][origin_x] = new Pawn(2, origin_y, origin_x);
-                    selectedPawn.setX(cursor_x);
-                    selectedPawn.setY(cursor_y);
-                    pawnArray[cursor_y][cursor_x] = selectedPawn;
+                    selectedPawn.setX(pawn_x);
+                    selectedPawn.setY(pawn_y);
+                    pawnArray[pawn_y][pawn_x] = selectedPawn;
 
-
-                    gridPane.getChildren().removeAll(selection);
-                    gridPane.getChildren().removeAll(selectedPawn.getImageView());
-                    gridPane.add(pawnArray[cursor_y][cursor_x].getImageView(), cursor_x, cursor_y);
-                    selectedPawn = null;
-
+                    //jesli ruch dalej mozliwy zostaw, jesli nie zrob deselect
+                    deselectPawn(pawn_x, pawn_y, gridPane);
 
                     System.out.println("Pawn moved!");
+                    drawGrid(pawnArray, gridPane);
 
                 } else {
                     System.out.println("You cant move here");
                 }
+
             }
-            //System.out.println("Origin: " + pawnArray[origin_y][origin_x]);
-            //System.out.println("Destination: " + pawnArray[cursor_y][cursor_x]);
         }
 
-    }
 
+    }
+    public void deselectPawn(int x, int y, GridPane gridPane){
+
+
+        //gridPane.getChildren().removeAll(selection);
+        //gridPane.getChildren().removeAll(pawnArray[y][x].getImageView());
+        gridPane.getChildren().removeAll(selectedPawn.getImageView());
+
+        if(selectedPawn.isType() == 0){
+            selectedPawn.setImage(new ImageView("whitePawn.png"));
+        } else {
+            selectedPawn.setImage(new ImageView("blackPawn.png"));
+        }
+
+        gridPane.add(selectedPawn.getImageView(), x, y);
+        selectedPawn = null;
+    }
+    public ImageView createPawn(Pawn[][] pawnArray, int pawn_x, int pawn_y, GridPane gridPane, boolean selected){
+
+        ImageView temp;
+        if(!selected){
+            temp = pawnArray[pawn_y][pawn_x].getImageView();
+        } else {
+            temp = selection;
+        }
+
+
+
+        temp.setOnMouseClicked(e -> {
+            int x = GridPane.getColumnIndex((Node)e.getSource());
+            int y = GridPane.getRowIndex((Node)e.getSource());
+
+            if (pawnArray[y][x].isType() == player) {
+                System.out.println("YES");
+                selectionLogic(x, y, gridPane);
+            } else {
+                moveLogic(pawnArray,x, y, gridPane);
+            }
+
+        });
+
+        return temp;
+    }
 }

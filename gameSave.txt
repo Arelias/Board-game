@@ -1,0 +1,15 @@
+Player turn: 
+1
+Black score: 
+5
+White score: 
+10
+Checkerboard state: 
+20202020
+02220202
+22222020
+22222222
+22222222
+12022212
+21222121
+12121212

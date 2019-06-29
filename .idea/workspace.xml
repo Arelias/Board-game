@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="488ad50e-94bc-45a5-9bdc-9efe0043d2d4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/fileContent/fileContent.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/gameSave" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/possiblePawn.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/classAnalysis.bin" afterDir="false" />
@@ -13,10 +14,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/boardGameMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/boardGameMain.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/elements/Pawn.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/elements/Pawn.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/emptyPawn.png" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/emptyPawn.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/boardGameMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/boardGameMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/elements/Pawn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/elements/Pawn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/emptyPawn.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/emptyPawn.png" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -42,48 +41,41 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/boardGameMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="199" column="20" selection-start-line="199" selection-start-column="20" selection-end-line="199" selection-end-column="20" />
+            <state relative-caret-position="-438">
+              <caret line="146" column="32" lean-forward="true" selection-start-line="146" selection-start-column="32" selection-end-line="146" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#3068#3271#0" />
+                <element signature="e#4714#4756#0" />
+                <element signature="e#4798#4927#0" />
                 <element signature="method#setupArray#0;class#boardGameMain#0" />
+                <element signature="method#drawGrid#0;class#boardGameMain#0" />
+                <element signature="method#selectionLogic#0;class#boardGameMain#0" />
+                <element signature="method#selectPawn#0;class#boardGameMain#0" />
+                <element signature="method#deselectPawn#0;class#boardGameMain#0" />
+                <element signature="method#createPawn#0;class#boardGameMain#0" />
+                <element signature="method#checkPawns#0;class#boardGameMain#0" />
+                <element signature="method#checkPawnNeighbors#0;class#boardGameMain#0" />
+                <element signature="method#canHit#0;class#boardGameMain#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/javafx-src.zip!/com/sun/glass/ui/win/WinApplication.java">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/javafx-src.zip!/com/sun/javafx/event/EventHandlerManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="176" selection-start-line="176" selection-end-line="176" />
+            <state relative-caret-position="130">
+              <caret line="237" selection-start-line="237" selection-end-line="237" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/emptyPawn.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/javafx-src.zip!/javafx/event/Event.java">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/javafx-src.zip!/com/sun/javafx/event/CompositeEventHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="545">
-              <caret line="197" selection-start-line="197" selection-end-line="197" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/javafx-src.zip!/javafx/scene/Scene.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="2494" selection-start-line="2494" selection-end-line="2494" />
-              <folding>
-                <element signature="e#66572#66573#0" expanded="true" />
-                <element signature="e#66618#66619#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="130">
+              <caret line="85" selection-start-line="85" selection-end-line="85" />
             </state>
           </provider>
         </entry>
@@ -91,42 +83,23 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/elements/Pawn.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="27" column="35" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
+            <state relative-caret-position="527">
+              <caret line="34" selection-start-line="34" selection-end-line="34" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#698#699#0" expanded="true" />
-                <element signature="e#725#726#0" expanded="true" />
-                <element signature="e#756#757#0" expanded="true" />
-                <element signature="e#783#784#0" expanded="true" />
-                <element signature="e#808#809#0" expanded="true" />
-                <element signature="e#832#833#0" expanded="true" />
-                <element signature="e#857#858#0" expanded="true" />
-                <element signature="e#881#882#0" expanded="true" />
-                <element signature="e#1007#1008#0" expanded="true" />
-                <element signature="e#1039#1040#0" expanded="true" />
-                <element signature="e#1080#1081#0" expanded="true" />
-                <element signature="e#1112#1113#0" expanded="true" />
-                <element signature="e#1143#1144#0" expanded="true" />
-                <element signature="e#1169#1170#0" expanded="true" />
-                <element signature="e#1200#1201#0" expanded="true" />
-                <element signature="e#1226#1227#0" expanded="true" />
-                <element signature="e#1271#1272#0" expanded="true" />
-                <element signature="e#1305#1306#0" expanded="true" />
-                <element signature="e#1344#1345#0" expanded="true" />
-                <element signature="e#1372#1373#0" expanded="true" />
+                <element signature="e#870#871#0" expanded="true" />
+                <element signature="e#962#963#0" expanded="true" />
+                <element signature="e#992#993#0" expanded="true" />
+                <element signature="e#1279#1280#0" expanded="true" />
+                <element signature="e#1317#1318#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/javafx-src.zip!/javafx/scene/image/Image.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1156">
-              <caret line="124" selection-start-line="124" selection-end-line="124" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/src/main/resources/whitePawn.png">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -162,12 +135,14 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/java/elements/Board.java" />
         <option value="$PROJECT_DIR$/src/main/java/elements/Pawn.java" />
+        <option value="$PROJECT_DIR$/gameSave.txt" />
         <option value="$PROJECT_DIR$/src/main/java/boardGameMain.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
+    <option name="x" value="528" />
+    <option name="y" value="23" />
     <option name="width" value="1400" />
     <option name="height" value="1000" />
   </component>
@@ -177,8 +152,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -223,6 +196,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -240,12 +215,12 @@
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\areli\Documents\Development\Java\Projects\boardGame\src\main\resources" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\areli\Documents\Development\Java\Projects\boardGame\src\main\resources" />
       <recent name="C:\Users\areli\Documents\Development\Java\Projects\boardGame\src\test\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\areli\Documents\Development\Java\Projects\boardGame\src\main\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -287,12 +262,14 @@
       <workItem from="1560168054845" duration="10430000" />
       <workItem from="1560956211937" duration="16495000" />
       <workItem from="1561022927451" duration="21914000" />
-      <workItem from="1561294436728" duration="7314000" />
+      <workItem from="1561294436728" duration="14604000" />
+      <workItem from="1561320306020" duration="8595000" />
+      <workItem from="1561366455793" duration="18195000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56153000" />
+    <option name="totallyTimeSpent" value="90233000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -305,9 +282,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.195629" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19989339" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -315,9 +291,9 @@
       <window_info id="UI Designer" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.11700975" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4626219" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.24918744" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39653304" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
@@ -374,15 +350,62 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/boardGameMain.java</url>
+          <line>352</line>
+          <properties />
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>GridPane.getRowIndex((Node)e.getSource());</expression-string>
+        <expression-string>whiteScore = Integer.parseInt(lines[5])</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>GridPane.getColumnIndex((Node)e.getSource());</expression-string>
+        <expression-string>destinationPawn</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>(pawnArray[testY][testX].isType() == enemyTeam)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>if(pawnArray[testY][testX].isType() == enemyTeam)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>if (pawnArray[5 + 1][ - 1].isType() == enemyTeam &amp;&amp; pawnArray[5 + 2][x - 2].isType() == 2) {</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>if (pawnArray[6][1].isType() == enemyTeam &amp;&amp; pawnArray[y + 2][x - 2].isType() == 2) {</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>pawnArray</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>(Math.abs(originX - destX) + Math.abs(originY-destY))</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>GridPane.getRowIndex((Node)e.getSource());</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -430,70 +453,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/javafx-src.zip!/javafx/scene/image/Image.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1156">
-          <caret line="124" selection-start-line="124" selection-end-line="124" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/settings.gradle">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/javafx-src.zip!/javafx/event/Event.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="545">
-          <caret line="197" selection-start-line="197" selection-end-line="197" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/javafx-src.zip!/javafx/scene/Scene.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="2494" selection-start-line="2494" selection-end-line="2494" />
-          <folding>
-            <element signature="e#66572#66573#0" expanded="true" />
-            <element signature="e#66618#66619#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/emptyPawn.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/elements/Pawn.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="27" column="35" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#698#699#0" expanded="true" />
-            <element signature="e#725#726#0" expanded="true" />
-            <element signature="e#756#757#0" expanded="true" />
-            <element signature="e#783#784#0" expanded="true" />
-            <element signature="e#808#809#0" expanded="true" />
-            <element signature="e#832#833#0" expanded="true" />
-            <element signature="e#857#858#0" expanded="true" />
-            <element signature="e#881#882#0" expanded="true" />
-            <element signature="e#1007#1008#0" expanded="true" />
-            <element signature="e#1039#1040#0" expanded="true" />
-            <element signature="e#1080#1081#0" expanded="true" />
-            <element signature="e#1112#1113#0" expanded="true" />
-            <element signature="e#1143#1144#0" expanded="true" />
-            <element signature="e#1169#1170#0" expanded="true" />
-            <element signature="e#1200#1201#0" expanded="true" />
-            <element signature="e#1226#1227#0" expanded="true" />
-            <element signature="e#1271#1272#0" expanded="true" />
-            <element signature="e#1305#1306#0" expanded="true" />
-            <element signature="e#1344#1345#0" expanded="true" />
-            <element signature="e#1372#1373#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/jre/lib/rt.jar!/sun/reflect/NativeMethodAccessorImpl.class">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -504,13 +463,117 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/boardGameMain.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/javafx-src.zip!/javafx/scene/image/Image.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="199" column="20" selection-start-line="199" selection-start-column="20" selection-end-line="199" selection-end-column="20" />
+        <state relative-caret-position="414">
+          <caret line="124" selection-start-line="124" selection-end-line="124" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/javafx-src.zip!/javafx/scene/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130475">
+          <caret line="8411" selection-start-line="8411" selection-end-line="8411" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/javafx-src.zip!/javafx/scene/control/Button.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2278">
+          <caret line="186" selection-start-line="186" selection-end-line="186" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/emptyPawn.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/whitePawn.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.gradle">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/javafx-src.zip!/javafx/scene/Scene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5744">
+          <caret line="2494" selection-start-line="2494" selection-end-line="2494" />
+          <folding>
+            <element signature="e#66572#66573#0" expanded="true" />
+            <element signature="e#66618#66619#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/javafx-src.zip!/javafx/event/Event.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="197" selection-start-line="197" selection-end-line="197" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/possiblePawn.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/elements/Pawn.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#870#871#0" expanded="true" />
+            <element signature="e#962#963#0" expanded="true" />
+            <element signature="e#992#993#0" expanded="true" />
+            <element signature="e#1279#1280#0" expanded="true" />
+            <element signature="e#1317#1318#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/javafx-src.zip!/com/sun/javafx/event/EventHandlerManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="237" selection-start-line="237" selection-end-line="237" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/javafx-src.zip!/com/sun/javafx/event/CompositeEventHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="85" selection-start-line="85" selection-end-line="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/gameSave">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameSave.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="8" lean-forward="true" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/boardGameMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-438">
+          <caret line="146" column="32" lean-forward="true" selection-start-line="146" selection-start-column="32" selection-end-line="146" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3068#3271#0" />
+            <element signature="e#4714#4756#0" />
+            <element signature="e#4798#4927#0" />
             <element signature="method#setupArray#0;class#boardGameMain#0" />
+            <element signature="method#drawGrid#0;class#boardGameMain#0" />
+            <element signature="method#selectionLogic#0;class#boardGameMain#0" />
+            <element signature="method#selectPawn#0;class#boardGameMain#0" />
+            <element signature="method#deselectPawn#0;class#boardGameMain#0" />
+            <element signature="method#createPawn#0;class#boardGameMain#0" />
+            <element signature="method#checkPawns#0;class#boardGameMain#0" />
+            <element signature="method#checkPawnNeighbors#0;class#boardGameMain#0" />
+            <element signature="method#canHit#0;class#boardGameMain#0" />
           </folding>
         </state>
       </provider>

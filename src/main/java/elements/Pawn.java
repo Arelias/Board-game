@@ -8,10 +8,12 @@ public class Pawn {
     private int type;
     private boolean king;
     private int x, y;
-    ImageView image;
+    private ImageView image;
+    private boolean movable = false;
 
-
-
+    //Type 0 is white
+    //Type 1 is black
+    //Type 2 is empty field
     public Pawn(int type, int y, int x){
         this.type = type;
         this.x = x;
@@ -37,6 +39,10 @@ public class Pawn {
         return king;
     }
 
+    public boolean isMovable() {
+        return movable;
+    }
+
     public int getX() {
         return x;
     }
@@ -51,6 +57,10 @@ public class Pawn {
 
     public void setKing(boolean king) {
         this.king = king;
+    }
+
+    public void setMovable(boolean movable) {
+        this.movable = movable;
     }
 
     public void setX(int x) {

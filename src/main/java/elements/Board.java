@@ -37,7 +37,7 @@ public class Board {
     private static Pawn selectedPawn = null;
 
 
-    public void startGame(){
+    public void startGame() {
         player = 0;
         this.labelTeam.setText("White team turn");
         this.whiteScore = 0;
@@ -51,7 +51,7 @@ public class Board {
 
     }
 
-    public Board(){
+    public Board() {
         setUpSelectionImage();
         pawnArray = setupArray();
         gridPane = new GridPane();
@@ -66,7 +66,7 @@ public class Board {
 
 
         labelTeam.setText("White team turn");
-        labelTeam.setMinSize(100,20);
+        labelTeam.setMinSize(100, 20);
         labelTeam.setStyle("-fx-font: 24 arial;");
         labelBlackScore.setText("Black: " + blackScore);
         labelBlackScore.setStyle("-fx-font: 16 arial;");
@@ -77,24 +77,25 @@ public class Board {
     }
 
 
-    public void setUpSelectionImage(){
+    public void setUpSelectionImage() {
 
         selection.setOnMouseClicked(e -> {
             int x = GridPane.getColumnIndex((Node) e.getSource());
             int y = GridPane.getRowIndex((Node) e.getSource());
 
-            selectionLogic(x,y);
+            selectionLogic(x, y);
         });
     }
-    public void setUpImage(Pawn pawn){
 
-        if(pawn.getType() == 0){
+    public void setUpImage(Pawn pawn) {
+
+        if (pawn.getType() == 0) {
             pawn.setImage(new ImageView(new Image("whitePawn.png")));
         }
-        if(pawn.getType() == 1){
+        if (pawn.getType() == 1) {
             pawn.setImage(new ImageView(new Image("blackPawn.png")));
         }
-        if (pawn.getType() == 2){
+        if (pawn.getType() == 2) {
             pawn.setImage(new ImageView(new Image("emptyPawn.png")));
             pawn.getImage().setOpacity(0);
         }
@@ -106,7 +107,7 @@ public class Board {
             int y = GridPane.getRowIndex((Node) e.getSource());
 
             //selection logic
-            if(selectedPawn == null){
+            if (selectedPawn == null) {
                 selectionLogic(x, y);
             } else {
                 moveLogic(x, y);
@@ -114,9 +115,7 @@ public class Board {
         });
 
 
-
     }
-
 
 
     public Pawn getSelectedPawn() {
@@ -126,39 +125,51 @@ public class Board {
     public void setSelectedPawn(Pawn selectedPawn) {
         this.selectedPawn = selectedPawn;
     }
+
     public int getWhiteScore() {
         return whiteScore;
     }
+
     public void setWhiteScore(int whiteScore) {
         this.whiteScore = whiteScore;
     }
+
     public int getBlackScore() {
         return blackScore;
     }
+
     public void setBlackScore(int blackScore) {
         this.blackScore = blackScore;
     }
+
     public Label getLabelTeam() {
         return labelTeam;
     }
+
     public Label getLabelBlackScore() {
         return labelBlackScore;
     }
+
     public Label getLabelWhiteScore() {
         return labelWhiteScore;
     }
+
     public GridPane getGridPane() {
         return gridPane;
     }
+
     public void setPlayer(int player) {
         this.player = player;
     }
+
     public Pawn[][] getPawnArray() {
         return pawnArray;
     }
+
     public void setPawnArray(Pawn[][] pawnArray) {
         this.pawnArray = pawnArray;
     }
+
     public int getPlayer() {
         return player;
     }
@@ -180,6 +191,7 @@ public class Board {
         }
         return output;
     }
+
     public void drawGrid() {
 
         //System.out.println("Grid drawing");
@@ -195,6 +207,7 @@ public class Board {
         }
 
     }
+
     public void selectionLogic(int x, int y) {
 
         Pawn clickedPawn = pawnArray[y][x];
@@ -202,12 +215,12 @@ public class Board {
 
         if (clickedPawn.isType() != 2 && clickedPawn.isMovable() && selectedPawn == null) {
 
-                System.out.println("Selecting Pawn!");
-                clickedPawn = selectPawn(x, y);
-                selectedPawn = clickedPawn;
+            System.out.println("Selecting Pawn!");
+            clickedPawn = selectPawn(x, y);
+            selectedPawn = clickedPawn;
 
         } else {
-            if(selectedPawn != null){
+            if (selectedPawn != null) {
                 if (selectedPawn.equals(clickedPawn)) {
                     System.out.println("You already selected this Pawn! Deselecting");
 
@@ -222,35 +235,38 @@ public class Board {
             }
         }
     }
+
     public Pawn selectPawn(int x, int y) {
 
         Pawn output = this.pawnArray[y][x];
 
-        if (output.isMovable() == true){
+        if (output.isMovable() == true) {
             output.setImage(selection);
             drawGrid();
         }
 
         return output;
     }
+
     public void deselectPawn(int x, int y) {
 
         Pawn output = pawnArray[y][x];
         setUpImage(output);
-        if(selectedPawn.getType() == player){
+        if (selectedPawn.getType() == player) {
             selectedPawn.getImage().setImage(new Image("possiblePawn.png"));
         }
         selectedPawn = null;
         drawGrid();
     }
-    public boolean victoryCheck(){
+
+    public boolean victoryCheck() {
         int countMovable = 0;
         int countPawns = 0;
 
         for (Pawn[] pawnRow : pawnArray) {
             for (Pawn pawn : pawnRow) {
                 if (pawn.isType() == player) {
-                    if(canPawnMove(pawn)){
+                    if (canPawnMove(pawn)) {
                         countMovable++;
                     }
                     countPawns++;
@@ -278,6 +294,7 @@ public class Board {
         }
         return false;
     }
+
     public boolean canPawnMove(Pawn pawn) {
 
         int enemyTeam = (player + 1) % 2;
@@ -293,7 +310,7 @@ public class Board {
         if (x <= pawnArray.length - 2 && y <= pawnArray.length - 2) {
             botRight = pawnArray[y + 1][x + 1].isType() == 2;
 
-            if(x < pawnArray.length - 2 && y < pawnArray.length - 2){
+            if (x < pawnArray.length - 2 && y < pawnArray.length - 2) {
                 botRight = botRight || (pawnArray[y + 1][x + 1].isType() == enemyTeam && pawnArray[y + 2][x + 2].isType() == 2);
             }
         }
@@ -302,7 +319,7 @@ public class Board {
         if (x >= 1 && y <= pawnArray.length - 2) {
             botLeft = pawnArray[y + 1][x - 1].isType() == 2;
 
-            if (x > 1 && y < pawnArray.length - 2){
+            if (x > 1 && y < pawnArray.length - 2) {
                 botLeft = botLeft || (pawnArray[y + 1][x - 1].isType() == enemyTeam && pawnArray[y + 2][x - 2].isType() == 2);
             }
 
@@ -311,7 +328,7 @@ public class Board {
         if (y >= 1 && x <= pawnArray.length - 2) {
             topRight = pawnArray[y - 1][x + 1].isType() == 2;
 
-            if (y > 1 && x < pawnArray.length - 2){
+            if (y > 1 && x < pawnArray.length - 2) {
                 topRight = topRight || (pawnArray[y - 1][x + 1].isType() == enemyTeam && pawnArray[y - 2][x + 2].isType() == 2);
             }
 
@@ -320,14 +337,14 @@ public class Board {
         if (x >= 1 && y >= 1) {
             topLeft = pawnArray[y - 1][x - 1].isType() == 2;
 
-            if (x > 1 && y > 1){
+            if (x > 1 && y > 1) {
                 topLeft = topLeft || (pawnArray[y - 1][x - 1].isType() == enemyTeam && pawnArray[y - 2][x - 2].isType() == 2);
             }
         }
 
-        if(pawn.isKing()){
+        if (pawn.isKing()) {
 
-            if (botLeft || botRight ||  topLeft || topRight) {
+            if (botLeft || botRight || topLeft || topRight) {
                 return true;
             }
 
@@ -345,14 +362,16 @@ public class Board {
         pawn.getImage().setImage(blockedPawn);
         return false;
     }
-    public void checkKing(Pawn pawn){
-        if(player == 0 && pawn.getY() == 7 && pawn.isKing() == false){
+
+    public void checkKing(Pawn pawn) {
+        if (player == 0 && pawn.getY() == 7 && pawn.isKing() == false) {
             pawn.setKing(true);
         }
-        if(player == 1 && pawn.getY() == 0 && pawn.isKing() == false){
+        if (player == 1 && pawn.getY() == 0 && pawn.isKing() == false) {
             pawn.setKing(true);
         }
     }
+
     //Check
     public void checkPawns() {
 
@@ -378,11 +397,11 @@ public class Board {
             }
         }
 
-        if(countHitting == 0){
+        if (countHitting == 0) {
             for (Pawn[] pawnRow : pawnArray) {
                 for (Pawn pawn : pawnRow) {
                     if (pawn.isType() == player) {
-                        if(canPawnMove(pawn)){
+                        if (canPawnMove(pawn)) {
                             pawn.setMovable(true);
                             pawn.getImage().setImage(new Image("possiblePawn.png"));
                         }
@@ -391,6 +410,7 @@ public class Board {
             }
         }
     }
+
     public boolean canPawnHit(Pawn pawn) {
 
 
@@ -401,11 +421,11 @@ public class Board {
         int checkingY = 0;
         int counter;
 
-        if(pawn.isKing()){
-            checkingX = pawn.getX()-1;
-            checkingY = pawn.getY()-1;
+        if (pawn.isKing()) {
+            checkingX = pawn.getX() - 1;
+            checkingY = pawn.getY() - 1;
             counter = 0;
-            while(checkingX > 1 && checkingY > 1 && counter < 1) {
+            while (checkingX > 1 && checkingY > 1 && counter < 1) {
                 //if i meet a
                 if (pawnArray[checkingY][checkingX].isType() == enemyTeam || pawnArray[checkingY][checkingX].isType() == pawn.isType()) {
                     counter++;
@@ -419,10 +439,10 @@ public class Board {
             }
 
 
-            checkingX = pawn.getX()-1;
-            checkingY = pawn.getY()+1;
+            checkingX = pawn.getX() - 1;
+            checkingY = pawn.getY() + 1;
             counter = 0;
-            while(checkingX > 1 && checkingY < pawnArray.length - 2 && counter < 1){
+            while (checkingX > 1 && checkingY < pawnArray.length - 2 && counter < 1) {
                 if (pawnArray[checkingY][checkingX].isType() == enemyTeam || pawnArray[checkingY][checkingX].isType() == pawn.isType()) {
                     counter++;
                 }
@@ -435,10 +455,10 @@ public class Board {
             }
 
 
-            checkingX = pawn.getX()+1;
-            checkingY = pawn.getY()-1;
+            checkingX = pawn.getX() + 1;
+            checkingY = pawn.getY() - 1;
             counter = 0;
-            while(checkingX < pawnArray.length - 2 && checkingY > 1 && counter < 1){
+            while (checkingX < pawnArray.length - 2 && checkingY > 1 && counter < 1) {
                 if (pawnArray[checkingY][checkingX].isType() == enemyTeam || pawnArray[checkingY][checkingX].isType() == pawn.isType()) {
                     counter++;
                 }
@@ -451,10 +471,10 @@ public class Board {
             }
 
 
-            checkingX = pawn.getX()+1;
-            checkingY = pawn.getY()+1;
+            checkingX = pawn.getX() + 1;
+            checkingY = pawn.getY() + 1;
             counter = 0;
-            while(checkingX < pawnArray.length - 2  && checkingY < pawnArray.length - 2 && counter < 1){
+            while (checkingX < pawnArray.length - 2 && checkingY < pawnArray.length - 2 && counter < 1) {
                 if (pawnArray[checkingY][checkingX].isType() == enemyTeam || pawnArray[checkingY][checkingX].isType() == pawn.isType()) {
                     counter++;
                 }
@@ -530,41 +550,24 @@ public class Board {
         boolean goodMove = (selectedPawn.isKing() || forwardMove || hitMove) && destinationCheck;
 
 
-
         if (this.pawnArray[destY][destX].isType() != 2) {
             System.out.println("This spot is already occupied!");
 
         } else if (goodMove && hitMove != noHitMove) {
 
-            //Sprawdzilem wszystkie ruchy potrzebne
-            boolean test = canPawnHitDestination(selectedPawn, destinationPawn);
-            test = canPawnHit(selectedPawn);
-            if(test){
-                System.out.println("Destination triggered");
-            }
-
+            //This is for kings mainly
             if(hitMove){
-                //System.out.println("ONE DOWN");
-
-
-
-
+                if(canPawnHitDestination(selectedPawn, destinationPawn)){
+                    hit(selectedPawn, destinationPawn);
+                    moved = !canPawnHit(selectedPawn);
+                } else {
+                    System.out.println("You have to hit!");
+                }
+            } else {
+                hit(this.selectedPawn, destinationPawn);
+                moved = true;
             }
-            if(noHitMove){
-                //System.out.println("NOONE HIT");
-            }
-
-
-
-            hit(this.selectedPawn, destinationPawn);
-            pawnArray[originY][originX] = new Pawn(2, originY, originX);
-            setUpImage(pawnArray[originY][originX]);
-
-            selectedPawn.setX(destX);
-            selectedPawn.setY(destY);
-            pawnArray[destY][destX] = selectedPawn;
-
-            if (canPawnHit(selectedPawn) && !moved) {
+            if(!moved){
                 System.out.println("You can still move!");
             } else {
                 player = (player + 1) % 2;
@@ -575,14 +578,54 @@ public class Board {
                 } else {
                     labelTeam.setText("Black team turn");
                 }
+                System.out.println("Pawn moved!");
             }
-            //check only if he had hit a pawn
+            //Sprawdzilem wszystkie ruchy potrzebne
+//            boolean test = canPawnHitDestination(selectedPawn, destinationPawn);
+//            test = canPawnHit(selectedPawn);
+//            if (test) {
+//                System.out.println("Destination triggered");
+//            }
+//
+//            if (hitMove && canPawnHitDestination(selectedPawn, destinationPawn)) {
+//                moved = false;
+//            } else {
+//                System.out.println("Why wont you hit?");
+//            }
+//            if (noHitMove) {
+//                hit(selectedPawn, destinationPawn);
+//            }
 
 
-            System.out.println("Pawn moved!");
+            //            if(canPawnHitDestination(selectedPawn,destinationPawn) || noHitMove){
+            //                hit(this.selectedPawn, destinationPawn);
+            //            }
 
+            //hit(this.selectedPawn, destinationPawn);
+//            pawnArray[originY][originX] = new Pawn(2, originY, originX);
+//            setUpImage(pawnArray[originY][originX]);
+//
+//            selectedPawn.setX(destX);
+//            selectedPawn.setY(destY);
+//            pawnArray[destY][destX] = selectedPawn;
+
+//            if (canPawnHit(selectedPawn) && !moved) {
+//                System.out.println("You can still move!");
+//            } else {
+//                player = (player + 1) % 2;
+//                checkPawns();
+//                deselectPawn(destX, destY);
+//                if (player == 0) {
+//                    labelTeam.setText("White team turn");
+//                } else {
+//                    labelTeam.setText("Black team turn");
+//                }
+//            }
+//            //check only if he had hit a pawn
+//
+//
+//            System.out.println("Pawn moved!");
             drawGrid();
-
 
 
         } else {
@@ -661,29 +704,10 @@ public class Board {
                 canHit = false;
             }
         }
-        if (canHit) {
-            //replace enemy pawn with empty pawn (enemy)
-            //remove old pawn before moving (origin)
-            //put new pawn after moving (destination)
-            pawnArray[enemyY][enemyX] = new Pawn(2, enemyY, enemyX);
-            setUpImage(pawnArray[enemyY][enemyX]);
-
-            pawnArray[origin.getY()][origin.getX()] = new Pawn(2, origin.getY(), origin.getX());
-            setUpImage(pawnArray[origin.getY()][origin.getX()]);
-
-            selectedPawn.setX(destination.getX());
-            selectedPawn.setY(destination.getY());
-            pawnArray[destination.getY()][destination.getX()] = selectedPawn;
-            setUpImage(pawnArray[destination.getY()][destination.getX()]);
-
-            drawGrid();
-        } else {
-            System.out.println("You can't hit there!");
-        }
         return canHit;
     }
 
-    public void hit(Pawn origin, Pawn destination){
+    public void hit(Pawn origin, Pawn destination) {
 
         int enemyTeam = (origin.isType() + 1) % 2;
         //True if move is from right to left
@@ -697,29 +721,35 @@ public class Board {
         int y = 0;
 
         //left and up
-        if(directionX && directionY){
-            x = destination.getX()+1;
-            y = destination.getY()+1;
+        if (directionX && directionY) {
+            x = destination.getX() + 1;
+            y = destination.getY() + 1;
         }
         //if left and down
-        if(directionX && !directionY){
-            x = destination.getX()+1;
-            y = destination.getY()-1;
+        if (directionX && !directionY) {
+            x = destination.getX() + 1;
+            y = destination.getY() - 1;
         }
         //if right and up
-        if(!directionX && directionY){
-            x = destination.getX()-1;
-            y = destination.getY()+1;
+        if (!directionX && directionY) {
+            x = destination.getX() - 1;
+            y = destination.getY() + 1;
         }
         //if right and down
-        if(!directionX && !directionY){
-            x = destination.getX()-1;
-            y = destination.getY()-1;
+        if (!directionX && !directionY) {
+            x = destination.getX() - 1;
+            y = destination.getY() - 1;
         }
 
-        if(pawnArray[y][x].isType() == enemyTeam){
-            pawnArray[y][x] = new Pawn(2,y,x);
-            setUpImage(pawnArray[y][x]);
-        }
+        //remove old
+        pawnArray[y][x] = new Pawn(2, y, x);
+        setUpImage(pawnArray[y][x]);
+
+        pawnArray[origin.getY()][origin.getX()] = new Pawn(2, origin.getY(), origin.getX());
+        setUpImage(pawnArray[origin.getY()][origin.getX()]);
+
+        selectedPawn.setX(destination.getX());
+        selectedPawn.setY(destination.getY());
+        pawnArray[destination.getY()][destination.getX()] = selectedPawn;
     }
 }

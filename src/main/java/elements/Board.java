@@ -117,11 +117,6 @@ public class Board {
 
     }
 
-
-    public Pawn getSelectedPawn() {
-        return selectedPawn;
-    }
-
     public void setSelectedPawn(Pawn selectedPawn) {
         this.selectedPawn = selectedPawn;
     }
@@ -174,7 +169,6 @@ public class Board {
         return player;
     }
 
-
     public Pawn[][] setupArray() {
         Pawn[][] output = new Pawn[8][8];
         for (int i = 0; i < 8; i++) {
@@ -226,7 +220,7 @@ public class Board {
 
                     //deselect pawn
                     deselectPawn(x, y);
-                    checkPawns();
+                    //checkPawns();
                     drawGrid();
 
                 } else {
@@ -372,7 +366,6 @@ public class Board {
         }
     }
 
-    //Check
     public void checkPawns() {
 
         int countHitting = 0;
@@ -544,9 +537,6 @@ public class Board {
         boolean hitMove = (pawnDistance == 4 || selectedPawn.isKing()) && canPawnHit(selectedPawn);
         boolean noHitMove = (pawnDistance == 2 || selectedPawn.isKing()) && forwardMove && !canPawnHit(selectedPawn);
 
-
-        //if can hit it can move back or if its king it can move back
-        //boolean goodMove = hitMove || (noHitMove && forwardMove) && destinationCheck;
         boolean goodMove = (selectedPawn.isKing() || forwardMove || hitMove) && destinationCheck;
 
 
@@ -580,51 +570,6 @@ public class Board {
                 }
                 System.out.println("Pawn moved!");
             }
-            //Sprawdzilem wszystkie ruchy potrzebne
-//            boolean test = canPawnHitDestination(selectedPawn, destinationPawn);
-//            test = canPawnHit(selectedPawn);
-//            if (test) {
-//                System.out.println("Destination triggered");
-//            }
-//
-//            if (hitMove && canPawnHitDestination(selectedPawn, destinationPawn)) {
-//                moved = false;
-//            } else {
-//                System.out.println("Why wont you hit?");
-//            }
-//            if (noHitMove) {
-//                hit(selectedPawn, destinationPawn);
-//            }
-
-
-            //            if(canPawnHitDestination(selectedPawn,destinationPawn) || noHitMove){
-            //                hit(this.selectedPawn, destinationPawn);
-            //            }
-
-            //hit(this.selectedPawn, destinationPawn);
-//            pawnArray[originY][originX] = new Pawn(2, originY, originX);
-//            setUpImage(pawnArray[originY][originX]);
-//
-//            selectedPawn.setX(destX);
-//            selectedPawn.setY(destY);
-//            pawnArray[destY][destX] = selectedPawn;
-
-//            if (canPawnHit(selectedPawn) && !moved) {
-//                System.out.println("You can still move!");
-//            } else {
-//                player = (player + 1) % 2;
-//                checkPawns();
-//                deselectPawn(destX, destY);
-//                if (player == 0) {
-//                    labelTeam.setText("White team turn");
-//                } else {
-//                    labelTeam.setText("Black team turn");
-//                }
-//            }
-//            //check only if he had hit a pawn
-//
-//
-//            System.out.println("Pawn moved!");
             drawGrid();
 
 

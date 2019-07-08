@@ -29,12 +29,14 @@ public class Board {
     int whiteScore = 0;
     int blackScore = 0;
 
+
     private static Pawn[][] pawnArray;
     private static GridPane gridPane;
 
     int player = 0;
     boolean moved = true;
     boolean gotAHit = false;
+    boolean easyMode = false;
     private static Pawn selectedPawn = null;
 
 
@@ -138,6 +140,14 @@ public class Board {
 
     public void setWhiteScore(int whiteScore) {
         this.whiteScore = whiteScore;
+    }
+
+    public boolean isEasyMode() {
+        return easyMode;
+    }
+
+    public void setEasyMode(boolean easyMode) {
+        this.easyMode = easyMode;
     }
 
     public int getBlackScore() {
@@ -259,7 +269,12 @@ public class Board {
             Pawn output = pawnArray[y][x];
             setUpImage(output);
             if (selectedPawn.getType() == player) {
-                selectedPawn.getImage().setImage(new Image("possiblePawn.png"));
+                if(easyMode){
+                    selectedPawn.getImage().setImage(new Image("possiblePawn.png"));
+                } else {
+                    setUpImage(selectedPawn);
+                }
+
             }
             selectedPawn = null;
             drawGrid();
@@ -366,7 +381,9 @@ public class Board {
         }
 
         //System.out.println("Pawn blocked, X: " + pawn.getX() + ", Y: " + pawn.getY() + ", length: " + pawnArray.length);
-        pawn.getImage().setImage(blockedPawn);
+        if(easyMode){
+            pawn.getImage().setImage(blockedPawn);
+        }
         return false;
     }
 
@@ -379,6 +396,16 @@ public class Board {
         }
     }
 
+    public void resetPawnImages() {
+        //Check pawns that can hit
+        for (Pawn[] pawnRow : this.pawnArray) {
+            for (Pawn pawn : pawnRow) {
+                if (pawn.isType() != 2) {
+                    setUpImage(pawn);
+                }
+            }
+        }
+    }
     public void checkPawns() {
 
         int countHitting = 0;
@@ -393,7 +420,9 @@ public class Board {
                             countHitting++;
                             pawn.setMovable(true);
                             setUpImage(pawn);
-                            pawn.getImage().setImage(new Image("possiblePawn.png"));
+                            if (easyMode) {
+                                pawn.getImage().setImage(new Image("possiblePawn.png"));
+                            }
                         }
                     } else {
                         pawn.setMovable(false);
@@ -409,7 +438,9 @@ public class Board {
                     if (pawn.isType() == player) {
                         if (canPawnMove(pawn)) {
                             pawn.setMovable(true);
-                            pawn.getImage().setImage(new Image("possiblePawn.png"));
+                            if (easyMode) {
+                                pawn.getImage().setImage(new Image("possiblePawn.png"));
+                            }
                         }
                     }
                 }
@@ -588,8 +619,6 @@ public class Board {
             }
 
             drawGrid();
-
-
         } else {
             System.out.println("You cant move here");
         }

@@ -2,19 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="488ad50e-94bc-45a5-9bdc-9efe0043d2d4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/blackPawnKing.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/whitePawnKing.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/boardGameMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/boardGameMain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/elements/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/elements/Board.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gameSave.txt" beforeDir="false" afterPath="$PROJECT_DIR$/gameSave.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/boardGameMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/boardGameMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/elements/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/elements/Board.java" afterDir="false" />
     </list>
@@ -39,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/boardGameMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="31" column="28" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
+            <state relative-caret-position="391">
+              <caret line="109" column="13" selection-start-line="109" selection-start-column="13" selection-end-line="109" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -51,36 +38,41 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/elements/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="102" column="68" selection-start-line="102" selection-start-column="68" selection-end-line="102" selection-end-column="68" />
+            <state relative-caret-position="191">
+              <caret line="403" column="37" selection-start-line="403" selection-start-column="37" selection-end-line="403" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4106#4107#0" expanded="true" />
-                <element signature="e#4173#4174#0" expanded="true" />
-                <element signature="e#4266#4267#0" expanded="true" />
-                <element signature="e#4333#4334#0" expanded="true" />
-                <element signature="e#4426#4427#0" expanded="true" />
-                <element signature="e#4493#4494#0" expanded="true" />
-                <element signature="e#4572#4573#0" expanded="true" />
-                <element signature="e#4651#4652#0" expanded="true" />
-                <element signature="e#4719#4720#0" expanded="true" />
-                <element signature="e#4796#4797#0" expanded="true" />
-                <element signature="e#4866#4867#0" expanded="true" />
-                <element signature="e#4960#4961#0" expanded="true" />
-                <element signature="e#5019#5020#0" expanded="true" />
+                <element signature="e#2602#2863#0" />
+                <element signature="e#2903#3807#0" />
+                <element signature="e#4137#4138#0" expanded="true" />
+                <element signature="e#4204#4205#0" expanded="true" />
+                <element signature="e#4297#4298#0" expanded="true" />
+                <element signature="e#4340#4341#0" expanded="true" />
+                <element signature="e#4371#4372#0" expanded="true" />
+                <element signature="e#4420#4421#0" expanded="true" />
+                <element signature="e#4460#4461#0" expanded="true" />
+                <element signature="e#4519#4520#0" expanded="true" />
+                <element signature="e#4612#4613#0" expanded="true" />
+                <element signature="e#4679#4680#0" expanded="true" />
+                <element signature="e#4758#4759#0" expanded="true" />
+                <element signature="e#4837#4838#0" expanded="true" />
+                <element signature="e#4905#4906#0" expanded="true" />
+                <element signature="e#4982#4983#0" expanded="true" />
+                <element signature="e#5052#5053#0" expanded="true" />
+                <element signature="e#5146#5147#0" expanded="true" />
+                <element signature="e#5205#5206#0" expanded="true" />
                 <element signature="e#4749#5306#0" />
                 <element signature="e#5311#5671#0" />
                 <element signature="e#5676#6500#0" />
                 <element signature="e#6505#6734#0" />
                 <element signature="e#7040#8074#0" />
-                <element signature="e#8079#10392#0" />
                 <element signature="e#10398#10663#0" />
-                <element signature="e#10479#11756#0" />
                 <element signature="e#11799#16040#0" />
                 <element signature="e#19973#22420#0" />
+                <element signature="e#20991#22473#0" />
               </folding>
             </state>
           </provider>
@@ -173,6 +165,10 @@
       <find>deselect</find>
       <find>Ahit</find>
       <find>hit = false</find>
+      <find>ima</find>
+      <find>blo</find>
+      <find>blocked</find>
+      <find>check</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -183,8 +179,8 @@
       <list>
         <option value="$PROJECT_DIR$/gameSave.txt" />
         <option value="$PROJECT_DIR$/src/main/java/elements/Pawn.java" />
-        <option value="$PROJECT_DIR$/src/main/java/boardGameMain.java" />
         <option value="$PROJECT_DIR$/src/main/java/elements/Board.java" />
+        <option value="$PROJECT_DIR$/src/main/java/boardGameMain.java" />
       </list>
     </option>
   </component>
@@ -317,12 +313,12 @@
       <workItem from="1562448739154" duration="7818000" />
       <workItem from="1562519082003" duration="9841000" />
       <workItem from="1562592315744" duration="2913000" />
-      <workItem from="1562600969729" duration="21922000" />
+      <workItem from="1562600969729" duration="22853000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="139970000" />
+    <option name="totallyTimeSpent" value="140901000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -335,6 +331,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15618336" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -346,13 +343,13 @@
       <window_info anchor="bottom" id="Duplicates" weight="0.12242687" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.33802816" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.18743229" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.32719395" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.18743229" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.32719395" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
       <window_info anchor="bottom" id="Build" order="7" weight="0.32936078" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.14409535" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.18959913" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="11" />
@@ -409,7 +406,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/boardGameMain.java</url>
-          <line>160</line>
+          <line>175</line>
           <properties />
           <option name="timeStamp" value="47" />
         </line-breakpoint>
@@ -598,16 +595,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/boardGameMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="31" column="28" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/elements/Pawn.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -622,33 +609,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/elements/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="102" column="68" selection-start-line="102" selection-start-column="68" selection-end-line="102" selection-end-column="68" />
+        <state relative-caret-position="191">
+          <caret line="403" column="37" selection-start-line="403" selection-start-column="37" selection-end-line="403" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4106#4107#0" expanded="true" />
-            <element signature="e#4173#4174#0" expanded="true" />
-            <element signature="e#4266#4267#0" expanded="true" />
-            <element signature="e#4333#4334#0" expanded="true" />
-            <element signature="e#4426#4427#0" expanded="true" />
-            <element signature="e#4493#4494#0" expanded="true" />
-            <element signature="e#4572#4573#0" expanded="true" />
-            <element signature="e#4651#4652#0" expanded="true" />
-            <element signature="e#4719#4720#0" expanded="true" />
-            <element signature="e#4796#4797#0" expanded="true" />
-            <element signature="e#4866#4867#0" expanded="true" />
-            <element signature="e#4960#4961#0" expanded="true" />
-            <element signature="e#5019#5020#0" expanded="true" />
+            <element signature="e#2602#2863#0" />
+            <element signature="e#2903#3807#0" />
+            <element signature="e#4137#4138#0" expanded="true" />
+            <element signature="e#4204#4205#0" expanded="true" />
+            <element signature="e#4297#4298#0" expanded="true" />
+            <element signature="e#4340#4341#0" expanded="true" />
+            <element signature="e#4371#4372#0" expanded="true" />
+            <element signature="e#4420#4421#0" expanded="true" />
+            <element signature="e#4460#4461#0" expanded="true" />
+            <element signature="e#4519#4520#0" expanded="true" />
+            <element signature="e#4612#4613#0" expanded="true" />
+            <element signature="e#4679#4680#0" expanded="true" />
+            <element signature="e#4758#4759#0" expanded="true" />
+            <element signature="e#4837#4838#0" expanded="true" />
+            <element signature="e#4905#4906#0" expanded="true" />
+            <element signature="e#4982#4983#0" expanded="true" />
+            <element signature="e#5052#5053#0" expanded="true" />
+            <element signature="e#5146#5147#0" expanded="true" />
+            <element signature="e#5205#5206#0" expanded="true" />
             <element signature="e#4749#5306#0" />
             <element signature="e#5311#5671#0" />
             <element signature="e#5676#6500#0" />
             <element signature="e#6505#6734#0" />
             <element signature="e#7040#8074#0" />
-            <element signature="e#8079#10392#0" />
             <element signature="e#10398#10663#0" />
-            <element signature="e#10479#11756#0" />
             <element signature="e#11799#16040#0" />
             <element signature="e#19973#22420#0" />
+            <element signature="e#20991#22473#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/boardGameMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="109" column="13" selection-start-line="109" selection-start-column="13" selection-end-line="109" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

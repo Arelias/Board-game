@@ -62,6 +62,8 @@ public class boardGameMain extends Application {
 
         Button buttonStart = new Button("Start");
         buttonStart.setMinSize(100, 20);
+        Button buttonDifficulty = new Button("Set to easy");
+        buttonDifficulty.setMinSize(100, 20);
         Button buttonTeam = new Button("Change Team");
         buttonTeam.setMinSize(100, 20);
         Button buttonSaveGame = new Button("Save");
@@ -76,6 +78,7 @@ public class boardGameMain extends Application {
         menuGrid.add(buttonStart, 0, 2);
         menuGrid.add(buttonSaveGame, 1, 2);
         menuGrid.add(buttonLoadGame, 2, 2);
+        menuGrid.add(buttonDifficulty, 3, 2);
         menuGrid.add(board.getLabelTeam(), 1,0);
         menuGrid.add(board.getLabelBlackScore(), 0,1);
         menuGrid.add(board.getLabelWhiteScore(), 2, 1);
@@ -94,6 +97,18 @@ public class boardGameMain extends Application {
 
         buttonStart.setOnAction((e) -> {
             board.startGame();
+        });
+        buttonDifficulty.setOnAction((e) -> {
+            if(board.isEasyMode()){
+                buttonDifficulty.setText("Set to easy");
+                board.setEasyMode(false);
+                board.resetPawnImages();
+            } else {
+                buttonDifficulty.setText("Set to normal");
+                board.setEasyMode(true);
+                board.checkPawns();
+            }
+            board.drawGrid();
         });
         buttonTeam.setOnAction((e) -> {
 

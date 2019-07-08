@@ -10,26 +10,21 @@ public class Pawn {
     private int x, y;
     private ImageView image;
     private boolean movable = false;
+    private boolean isSelected = false;
+    private static ImageView selection = new ImageView(new Image("selectedPawn.png"));
+
 
     //Type 0 is white
     //Type 1 is black
     //Type 2 is empty field
     public Pawn(int type, int y, int x){
+
         this.type = type;
         this.x = x;
         this.y = y;
-
-        if(this.type == 0){
-            this.image = new ImageView(new Image("whitePawn.png"));
-        }
-        if(this.type == 1){
-            this.image = new ImageView(new Image("blackPawn.png"));
-        }
-        if (this.type == 2){
-            this.image = new ImageView(new Image("emptyPawn.png"));
-            this.image.setOpacity(0);
-        }
     }
+
+
 
     public int isType() {
         return type;
@@ -49,6 +44,22 @@ public class Pawn {
 
     public int getY() {
         return y;
+    }
+
+    public int getType() {
+        return type;
+    }
+
+    public ImageView getImage() {
+        return image;
+    }
+
+    public boolean isSelected() {
+        return isSelected;
+    }
+
+    public static ImageView getSelection() {
+        return selection;
     }
 
     public void setType(int type) {
@@ -73,10 +84,6 @@ public class Pawn {
 
     public void setImage(ImageView image) {
         this.image = image;
-    }
-
-    public ImageView getImageView() {
-        return image;
     }
 
     @Override

@@ -34,6 +34,7 @@ public class Board {
 
     int player = 0;
     boolean moved = true;
+    boolean gotAHit = false;
     private static Pawn selectedPawn = null;
 
 
@@ -90,10 +91,20 @@ public class Board {
     public void setUpImage(Pawn pawn) {
 
         if (pawn.getType() == 0) {
-            pawn.setImage(new ImageView(new Image("whitePawn.png")));
+            if(pawn.isKing()){
+                pawn.setImage(new ImageView(new Image("whitePawnKing.png")));
+            } else {
+                pawn.setImage(new ImageView(new Image("whitePawn.png")));
+            }
+
         }
         if (pawn.getType() == 1) {
-            pawn.setImage(new ImageView(new Image("blackPawn.png")));
+            if(pawn.isKing()){
+                pawn.setImage(new ImageView(new Image("blackPawnKing.png")));
+            } else {
+                pawn.setImage(new ImageView(new Image("blackPawn.png")));
+            }
+
         }
         if (pawn.getType() == 2) {
             pawn.setImage(new ImageView(new Image("emptyPawn.png")));
@@ -244,13 +255,15 @@ public class Board {
 
     public void deselectPawn(int x, int y) {
 
-        Pawn output = pawnArray[y][x];
-        setUpImage(output);
-        if (selectedPawn.getType() == player) {
-            selectedPawn.getImage().setImage(new Image("possiblePawn.png"));
+        if(!gotAHit){
+            Pawn output = pawnArray[y][x];
+            setUpImage(output);
+            if (selectedPawn.getType() == player) {
+                selectedPawn.getImage().setImage(new Image("possiblePawn.png"));
+            }
+            selectedPawn = null;
+            drawGrid();
         }
-        selectedPawn = null;
-        drawGrid();
     }
 
     public boolean victoryCheck() {
@@ -548,6 +561,7 @@ public class Board {
             //This is for kings mainly
             if(hitMove){
                 if(canPawnHitDestination(selectedPawn, destinationPawn)){
+                    gotAHit = true;
                     hit(selectedPawn, destinationPawn);
                     moved = !canPawnHit(selectedPawn);
                 } else {
@@ -560,7 +574,9 @@ public class Board {
             if(!moved){
                 System.out.println("You can still move!");
             } else {
+                gotAHit = false;
                 player = (player + 1) % 2;
+                checkKing(selectedPawn);
                 checkPawns();
                 deselectPawn(destX, destY);
                 if (player == 0) {
@@ -570,6 +586,7 @@ public class Board {
                 }
                 System.out.println("Pawn moved!");
             }
+
             drawGrid();
 
 

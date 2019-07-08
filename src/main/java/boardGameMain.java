@@ -29,6 +29,7 @@ public class boardGameMain extends Application {
 
     //private Pawn[][] pawnArray = setupArray();
     boolean moved = true;
+    boolean gotAHit = false;
 
     //private Optional<Pawn> selectedPawn = Optional.empty();
     private Pawn selectedPawn = null;
@@ -134,7 +135,11 @@ public class boardGameMain extends Application {
             output += "Checkerboard state: " + System.getProperty("line.separator");
             for (Pawn[] pawnRow : board.getPawnArray()){
                 for(Pawn pawn : pawnRow){
-                    output += pawn.isType();
+                    if(pawn.isKing()){
+                        output += (pawn.isType() + 3);
+                    } else {
+                        output += pawn.isType();
+                    }
                 }
                 output += System.getProperty("line.separator");
             }
@@ -175,7 +180,13 @@ public class boardGameMain extends Application {
                 char[] pawnRow = lines[i+7].toCharArray();
                 for (int j = 0; j < board.getPawnArray().length; j++){
                     int pawnType = Character.getNumericValue(pawnRow[j]);
-                    temp[i][j] = new Pawn(pawnType, i, j);
+                    if(pawnType > 2){
+                        pawnType = pawnType - 3;
+                        temp[i][j] = new Pawn(pawnType, i, j);
+                        temp[i][j].setKing(true);
+                    } else {
+                        temp[i][j] = new Pawn(pawnType, i, j);
+                    }
                     board.setUpImage(temp[i][j]);
                 }
             }

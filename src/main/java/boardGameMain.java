@@ -5,13 +5,10 @@ import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.SplitPane;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -25,16 +22,8 @@ import java.nio.file.Paths;
 public class boardGameMain extends Application {
 
     private Image imageback = new Image("background.jpg");
-    private Image blackPawn = new Image("blackPawn.png");
-
-    //private Pawn[][] pawnArray = setupArray();
-    boolean moved = true;
-    boolean gotAHit = false;
-
     //private Optional<Pawn> selectedPawn = Optional.empty();
     private Pawn selectedPawn = null;
-
-
 
     public static void main(String[] args) {
         launch(args);

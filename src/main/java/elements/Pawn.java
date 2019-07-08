@@ -10,9 +10,6 @@ public class Pawn {
     private int x, y;
     private ImageView image;
     private boolean movable = false;
-    private boolean isSelected = false;
-    private static ImageView selection = new ImageView(new Image("selectedPawn.png"));
-
 
     //Type 0 is white
     //Type 1 is black
@@ -52,18 +49,6 @@ public class Pawn {
 
     public ImageView getImage() {
         return image;
-    }
-
-    public boolean isSelected() {
-        return isSelected;
-    }
-
-    public static ImageView getSelection() {
-        return selection;
-    }
-
-    public void setType(int type) {
-        this.type = type;
     }
 
     public void setKing(boolean king) {

@@ -19,7 +19,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 
-public class boardGameMain extends Application {
+public class BoardGameMain extends Application {
 
     private Image imageback = new Image("background.jpg");
     //private Optional<Pawn> selectedPawn = Optional.empty();
